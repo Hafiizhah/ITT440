@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
     int addrlen = sizeof(address);
     
     // HTTP protocol implement
-    char *hello = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 37\n\n Hello, saya Hafizhah.Nama awak siapa?  Selamat berkenalan!";
+    char *hello = "HTTP/1.1 200 OK\nContent-Type: text/plain\nContent-Length: 53\n\n Hello, saya Hafiizhah.Nama awak siapa?  Boleh kenal?";
     
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
