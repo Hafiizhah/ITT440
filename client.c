@@ -9,21 +9,21 @@ int main(int argc , char *argv[])
 	struct sockaddr_in server;
 	char *message , server_reply[2000];
 	
-	//Create the socket
+	//Creating the socket
 	socket_desc = socket(AF_INET , SOCK_STREAM , 0);
 	if (socket_desc == -1)
 	{
 		printf("Could not create socket");
 	}
 		
-	server.sin_addr.s_addr = inet_addr("192.168.56.103"); //Enter the ip address Server VM
+	server.sin_addr.s_addr = inet_addr("192.168.56.103"); //Enter the Server VM ip address
 	server.sin_family = AF_INET;
 	server.sin_port = htons( 22 );
 
-	//Connect to remote server
+	//Connecting to remote server
 	if (connect(socket_desc , (struct sockaddr *)&server , sizeof(server)) < 0)
 	{
-		puts("connecting error");
+		puts("Connecting error");
 		return 1;
 	}
 	
@@ -36,11 +36,11 @@ int main(int argc , char *argv[])
 		puts("Sending failed");
 		return 1;
 	}
-	puts("Data has been Send\n");
+	puts("Data has been Sended\n");
                     //Receive a reply from the server
 	if( recv(socket_desc, server_reply , 2000 , 0) < 0)
 	{
-		puts("receiving failed");
+		puts("Receiving failed");
 	}
 	puts("Reply has been received\n");
 	puts(server_reply);
